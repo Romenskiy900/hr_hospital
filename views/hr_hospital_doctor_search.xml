@@ -1,0 +1,26 @@
+<odoo>
+    <data>
+
+        <record id="view_hr_hospital_doctor_search" model="ir.ui.view">
+            <field name="name">hr.hospital.doctor.search</field>
+            <field name="model">hr.hospital.doctor</field>
+            <field name="arch" type="xml">
+                <search string="Doctor Search">
+
+                    <field name="name"/>
+                    <field name="category_id"/>
+
+                    <filter string="Mentors"
+                          name="mentors"
+                          domain="[('intern_ids', '!=', False)]"/>
+
+                    <filter string="Interns"
+                            name="interns"
+                            domain="[('is_intern', '=', True)]"/>
+
+                </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,20 @@
+<odoo>
+    <data>
+
+        <record id="cat_intern" model="hr.hospital.doctor.category">
+            <field name="name">Лікар-інтерн</field>
+            <field name="sequence">1</field>
+        </record>
+
+        <record id="cat_specialist" model="hr.hospital.doctor.category">
+            <field name="name">Лікар-спеціаліст</field>
+            <field name="sequence">2</field>
+        </record>
+
+        <record id="cat_high" model="hr.hospital.doctor.category">
+            <field name="name">Лікар вищої категорії</field>
+            <field name="sequence">3</field>
+        </record>
+
+    </data>
+</odoo>

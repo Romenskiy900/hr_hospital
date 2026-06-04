@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+
+
+        <record id="patient_1" model="hr.hospital.patient">
+            <field name="name">Іван Іваненко</field>
+        </record>
+
+        <record id="patient_2" model="hr.hospital.patient">
+            <field name="name">Марія Петренко</field>
+        </record>
+
+        <record id="patient_3" model="hr.hospital.patient">
+            <field name="name">Олексій Сидоренко</field>
+        </record>
+
+    </data>
+</odoo>

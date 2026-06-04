@@ -1,0 +1,45 @@
+<odoo>
+    <data>
+
+
+        <record id="action_visit_report_doctor" model="ir.actions.server">
+            <field name="name">Visit Report</field>
+            <field name="model_id" ref="model_hr_hospital_doctor"/>
+            <field name="binding_model_id" ref="model_hr_hospital_doctor"/>
+            <field name="binding_view_types">list,form</field>
+            <field name="state">code</field>
+            <field name="code">
+action = {
+    'type': 'ir.actions.act_window',
+    'res_model': 'visit.report.wizard',
+    'view_mode': 'form',
+    'target': 'new',
+    'context': {
+        'default_doctor_ids': [(6, 0, records.ids)]
+    }
+}
+            </field>
+        </record>
+
+        <!-- SERVER ACTION FOR PATIENT -->
+        <record id="action_visit_report_patient" model="ir.actions.server">
+            <field name="name">Visit Report</field>
+            <field name="model_id" ref="model_hr_hospital_patient"/>
+            <field name="binding_model_id" ref="model_hr_hospital_patient"/>
+            <field name="binding_view_types">list,form</field>
+            <field name="state">code</field>
+            <field name="code">
+action = {
+    'type': 'ir.actions.act_window',
+    'res_model': 'visit.report.wizard',
+    'view_mode': 'form',
+    'target': 'new',
+    'context': {
+        'default_patient_ids': [(6, 0, records.ids)]
+    }
+}
+            </field>
+        </record>
+
+    </data>
+</odoo>

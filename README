@@ -1,0 +1,29 @@
+# HR Hospital Management
+
+HR Hospital is an Odoo module for managing hospital operations including doctors, patients, visits, and diseases.
+
+## Features
+- Doctor management with categories and mentor/intern structure
+- Patient records with assigned doctors and history
+- Visit scheduling (planned, done, cancelled)
+- Disease directory with hierarchy
+- Calendar, pivot, and list views for analytics
+- Wizards for mass doctor reassignment and visit reports
+
+## Models
+- hr.hospital.doctor
+- hr.hospital.patient
+- hr.hospital.visit
+- hr.hospital.disease
+- hr.hospital.doctor.category
+
+## Views
+- Form, List, Kanban
+- Calendar & Pivot
+- Search filters and grouping
+
+## Security
+- Access rights and record rules included
+
+## Purpose
+Educational project for learning Odoo development (ORM, views, business logic)

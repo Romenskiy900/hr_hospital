@@ -1,0 +1,7 @@
+<odoo>
+    <record id="action_open_index_html" model="ir.actions.act_url">
+        <field name="name">Module documentation</field>
+        <field name="url">/hr_hospital/static/description/index.html</field>
+        <field name="target">self</field>
+    </record>
+</odoo>

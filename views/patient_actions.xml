@@ -1,0 +1,28 @@
+<odoo>
+    <record id="action_mass_reassign_doctor_wizard" model="ir.actions.act_window">
+        <field name="name">Mass Change Doctor</field>
+        <field name="res_model">mass.reassign.doctor.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="patient_mass_reassign_doctor_action" model="ir.actions.server">
+        <field name="name">Mass Change Doctor</field>
+        <field name="model_id" ref="model_hr_hospital_patient"/>
+        <field name="binding_model_id" ref="model_hr_hospital_patient"/>
+        <field name="binding_view_types">list</field>
+        <field name="state">code</field>
+        <field name="code">
+action = {
+    'type': 'ir.actions.act_window',
+    'res_model': 'mass.reassign.doctor.wizard',
+    'view_mode': 'form',
+    'target': 'new',
+    'context': {
+        'active_ids': records.ids
+    }
+}
+        </field>
+    </record>
+</odoo>

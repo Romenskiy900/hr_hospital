@@ -1,0 +1,31 @@
+<odoo>
+    <record id="view_hr_hospital_visit_search" model="ir.ui.view">
+        <field name="name">hr.hospital.visit.search</field>
+        <field name="model">hr.hospital.visit</field>
+        <field name="arch" type="xml">
+            <search string="Візити">
+
+                <field name="patient_id"/>
+                <field name="doctor_id"/>
+                <field name="status"/>
+
+                <filter string="Заплановані"
+                        name="planned"
+                        domain="[('status','=','planned')]"/>
+
+                <filter string="Завершені"
+                        name="done"
+                        domain="[('status','=','done')]"/>
+
+                <filter string="Скасовані"
+                        name="cancelled"
+                        domain="[('status','=','cancelled')]"/>
+
+                <filter string="Група: статус"
+                        name="group_status"
+                        context="{'group_by': 'status'}"/>
+
+            </search>
+        </field>
+    </record>
+</odoo>

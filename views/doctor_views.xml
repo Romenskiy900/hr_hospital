@@ -1,0 +1,129 @@
+<odoo>
+    <data>
+
+        <record id="view_hr_hospital_doctor_list" model="ir.ui.view">
+            <field name="name">hr.hospital.doctor.list</field>
+            <field name="model">hr.hospital.doctor</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="name"/>
+                    <field name="category_id"/>
+                    <field name="user_id"/>
+                    <field name="mentor_id"/>
+                </list>
+            </field>
+        </record>
+
+
+        <record id="view_hr_hospital_doctor_form" model="ir.ui.view">
+            <field name="name">hr.hospital.doctor.form</field>
+            <field name="model">hr.hospital.doctor</field>
+            <field name="arch" type="xml">
+                <form string="Doctor">
+                    <sheet>
+
+                        <group>
+                            <field name="name"/>
+                            <field name="category_id"/>
+                            <field name="user_id"/>
+                            <field name="is_intern"/>
+                            <field name="mentor_id"/>
+                        </group>
+
+                        <group string="Mentor" invisible="not mentor_id">
+                            <field name="mentor_id" readonly="1"/>
+                        </group>
+
+                        <group string="Interns" invisible="not intern_ids">
+                            <field name="intern_ids" mode="kanban">
+                                <kanban>
+                                    <field name="name"/>
+                                    <field name="category_id"/>
+
+                                    <templates>
+                                        <t t-name="card">
+                                            <div class="o_kanban_record">
+                                                <strong>
+                                                    <field name="name"/>
+                                                </strong>
+                                                <div>
+                                                    <field name="category_id"/>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </templates>
+
+                                </kanban>
+                            </field>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="view_hr_hospital_doctor_kanban" model="ir.ui.view">
+            <field name="name">hr.hospital.doctor.kanban</field>
+            <field name="model">hr.hospital.doctor</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="category_id" quick_create="true">
+
+                    <field name="name"/>
+                    <field name="category_id"/>
+                    <field name="is_intern"/>
+                    <field name="intern_ids"/>
+
+                    <templates>
+                        <t t-name="card">
+                            <div class="o_kanban_record">
+
+                                <strong>
+                                    <field name="name"/>
+                                </strong>
+
+                                <div>
+                                    <field name="category_id"/>
+                                </div>
+
+                                <t t-if="record.is_intern.raw_value == false">
+                                    <div style="margin-top:8px;">
+                                        <strong>Interns:</strong>
+                                        <ul>
+                                            <t t-foreach="record.intern_ids.raw_value" t-as="intern">
+                                                <li><t t-esc="intern"/></li>
+                                            </t>
+                                        </ul>
+                                    </div>
+                                </t>
+
+                                <div style="margin-top:10px;">
+                                    <button type="object"
+                                            name="action_create_visit"
+                                            class="btn btn-primary btn-sm">
+                                        Book Visit
+                                    </button>
+                                </div>
+
+                                <div class="o_kanban_manage_bottom o_kanban_record_bottom">
+                                    <a type="edit" class="btn btn-sm btn-secondary">Edit</a>
+                                    <a type="delete" class="btn btn-sm btn-danger">Delete</a>
+                                </div>
+
+                            </div>
+                        </t>
+                    </templates>
+
+                </kanban>
+            </field>
+        </record>
+
+
+        <record id="action_hr_hospital_doctor" model="ir.actions.act_window">
+            <field name="name">Doctors</field>
+            <field name="res_model">hr.hospital.doctor</field>
+            <field name="view_mode">list,kanban,form</field>
+        </record>
+
+    </data>
+</odoo>

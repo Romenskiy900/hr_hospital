@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+
+        <record id="doctor_1" model="hr.hospital.doctor">
+            <field name="name">Григорій Хаус</field>
+            <field name="category_id" ref="cat_specialist"/>
+        </record>
+
+        <record id="doctor_2" model="hr.hospital.doctor">
+            <field name="name">Джон Ватсон</field>
+            <field name="category_id" ref="cat_intern"/>
+            <field name="mentor_id" ref="doctor_1"/>
+        </record>
+
+        <record id="doctor_3" model="hr.hospital.doctor">
+            <field name="name">Стівен Стренж</field>
+            <field name="category_id" ref="cat_intern"/>
+            <field name="mentor_id" ref="doctor_1"/>
+        </record>
+
+        <record id="doctor_4" model="hr.hospital.doctor">
+            <field name="name">Стівен Ватсон</field>
+            <field name="category_id" ref="cat_intern"/>
+            <field name="mentor_id" ref="doctor_1"/>
+        </record>
+
+    </data>
+</odoo>

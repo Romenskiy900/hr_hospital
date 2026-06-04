@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+
+
+        <record id="view_hr_hospital_visit_calendar" model="ir.ui.view">
+            <field name="name">hr.hospital.visit.calendar</field>
+            <field name="model">hr.hospital.visit</field>
+            <field name="arch" type="xml">
+                <calendar string="Visits"
+                          date_start="planned_datetime"
+                          date_stop="visit_datetime"
+                          color="doctor_id">
+                    <field name="patient_id"/>
+                    <field name="doctor_id"/>
+                    <field name="status"/>
+                </calendar>
+            </field>
+        </record>
+
+
+
+    </data>
+</odoo>

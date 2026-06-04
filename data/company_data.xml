@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Устанавливаем логотип для основной компании -->
+    <record id="base.main_company" model="res.company">
+        <field name="logo" type="base64" file="hr_hospital/static/img/logo.png"/>
+    </record>
+
+</odoo>

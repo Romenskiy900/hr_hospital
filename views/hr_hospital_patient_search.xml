@@ -1,0 +1,22 @@
+<odoo>
+    <data>
+
+        <record id="view_hr_hospital_patient_search" model="ir.ui.view">
+            <field name="name">hr.hospital.patient.search</field>
+            <field name="model">hr.hospital.patient</field>
+            <field name="arch" type="xml">
+                <search string="Patient Search">
+
+                    <field name="name"/>
+                    <field name="phone"/>
+
+                    <filter name="group_by_doctor"
+                            string="Group by Doctor"
+                            context="{'group_by': 'doctor_id'}"/>
+
+                </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>
